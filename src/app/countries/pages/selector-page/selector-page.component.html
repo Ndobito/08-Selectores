@@ -14,13 +14,13 @@
       <label class="form-label">Pais: </label>
       <select formControlName="country" class="form-control">
         <option disabled selected>-- Seleccione pais --</option>
-        <option ></option>
+        <option *ngFor="let country of countriesByRegion" [value]="country.cca3">{{country.name}}</option>
       </select>
     </div>
     <div class="col">
       <label class="form-label">Frontera: </label>
       <select formControlName="borders" class="form-control">
-        <option disabled selected>-- Seleccione Frontera --</option>
+        <option *ngFor="let borders of countriesByRegion">{{ borders.borders || 'No existen fronteras registradas'}}</option>
       </select>
     </div>
   </div>
